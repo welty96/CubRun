@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,19 +8,16 @@ public class HealthBar : MonoBehaviour
 {
     public player player;
     Image healthBar;
-    public float maxHealth = 100;
-    public float HP;
 
     // Start is called before the first frame update
     void Start()
     {
         healthBar= GetComponent<Image>();
-        maxHealth = player.HP;
+        player.OnDamage += OnDamage;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDamage()
     {
-        healthBar.fillAmount = player.HP / maxHealth;
+        healthBar.fillAmount = player.Hp / player.maxHp;
     }
 }

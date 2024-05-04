@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7752708801177917860}
   - component: {fileID: 7752708801177917861}
   - component: {fileID: 7752708801177917862}
+  - component: {fileID: -4366702986796623572}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -29,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7752708801177917863}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.52748, y: 4.885502, z: 8.030409}
   m_LocalScale: {x: 0.5158768, y: 0.52872217, z: 0.5158768}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7752708801177917881
 MeshFilter:
@@ -95,9 +96,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7752708801177917863}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!20 &7752708801177917860
@@ -114,9 +123,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -171,4 +188,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b99367e101ec949b30a161616eff73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _EffectCoinX: {fileID: 3596002455916641167, guid: a5f1b272e33bd7944939b21fb3a1a50c, type: 3}
+  onDestroyEffect: {fileID: -4366702986796623572}
+--- !u!114 &-4366702986796623572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7752708801177917863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b383c9383fb04b54bbd16488bc6a4801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  material: {fileID: 2100000, guid: 12884eb1aab4a3941b5d56641e519ff1, type: 2}
+  effectPrefab: {fileID: 4271303934588153807, guid: 820ccb29b088a994bafab566530c31a7, type: 3}

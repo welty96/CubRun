@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpawnerEnemy : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public player player;
+    public EnemyMovement enemyPrefab;
 
     public float timeSpawn = 2;
     private float timer;
@@ -20,8 +21,8 @@ public class SpawnerEnemy : MonoBehaviour
         if (timer <= 0) 
         {
             timer = timeSpawn;
-            Instantiate(enemyPrefab, transform);
-        
+            EnemyMovement enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);       
+            enemy.Player = player;
         }
     }
 }
